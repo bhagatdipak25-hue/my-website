@@ -1,15 +1,23 @@
-function generate(){
+async function generate(){
 
 let topic = document.getElementById("prompt").value;
 
-let title = topic + " | Amazing AI Video";
+let response = await fetch("https://api.openai.com/v1/chat/completions",{
+method:"POST",
+headers:{
+"Content-Type":"application/json",
+"Authorization":"Bearer YOUR_API_KEY"
+},
+body:JSON.stringify({
+model:"gpt-4.1-mini",
+messages:[
+{role:"user",content:"Give YouTube video idea about "+topic}
+]
+})
+});
 
-let desc = "Watch this amazing video about " + topic;
+let data = await response.json();
 
-let tags = topic + ", youtube video, trending";
-
-document.getElementById("title").innerText = title;
-document.getElementById("desc").innerText = desc;
-document.getElementById("tags").innerText = tags;
+document.getElementById("title").innerText = data.choices[0].message.content;
 
 }
