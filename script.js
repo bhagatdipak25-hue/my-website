@@ -1,24 +1,23 @@
-async function generate(){
+unction generate(){
 
-let topic = document.getElementById("prompt").value;
+let topic = document.getElementById("topic").value;
 
-let response = await fetch("https://api.openai.com/v1/chat/completions",{
-method:"POST",
-headers:{
-"Content-Type":"application/json",
-"Authorization":"Bearer 
-},
-body:JSON.stringify({
-model:"gpt-4.1-mini",
-messages:[
-{role:"user",content:"Give YouTube video idea about "+topic}
-]
-})
-});
+let titles = [
+topic + " | Amazing Video",
+topic + " | Must Watch",
+topic + " | Viral Video",
+topic + " | Best Moments"
+];
 
-let data = await response.json();
+let randomTitle = titles[Math.floor(Math.random()*titles.length)];
 
-document.getElementById("title").innerText = data.choices[0].message.content;
+let desc = "Watch this amazing video about " + topic + ". Like, share and subscribe for more.";
+
+let tags = topic + ", youtube video, trending video";
+
+document.getElementById("title").innerText = randomTitle;
+document.getElementById("desc").innerText = desc;
+document.getElementById("tags").innerText = tags;
 
 }
 
