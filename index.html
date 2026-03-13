@@ -1,5 +1,4 @@
-
-[5:16 pm, 12/3/2026] bhagatdipak25: <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <title>AI Video Generator</title>
@@ -10,34 +9,20 @@
 
 <h1>AI Video Generator</h1>
 
-<input id="prompt" placeholder="Write your video idea">
+<input id="prompt" placeholder="Enter video topic">
 
-<button onclick="generateVideo()">Generate Video</button>
+<button onclick="generate()">Generate</button>
 
-<br><br>
+<h2>Title</h2>
+<p id="title"></p>
 
-<video id="videoPlayer" width="400" controls></video>
+<h2>Description</h2>
+<p id="desc"></p>
 
-<script>
-    
-function generateVideo(){
+<h2>Tags</h2>
+<p id="tags"></p>
 
-let prompt = document.getElementById("prompt").value
-
-alert("Generating video for: " + prompt)
-
-let video = document.getElementById("videoPlayer")
-
-video.src = "https://www.w3schools.com/html/mov_bbb.mp4"
-
-video.play()
-
-}
-
-
-
-</script>
 <script src="script.js"></script>
-</body>
 
+</body>
 </html>
