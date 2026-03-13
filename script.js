@@ -1,29 +1,22 @@
-function generate(){
+async function generate(){
 
-var topic = document.getElementById("topic").value;
+let topic = document.getElementById("topic").value;
 
-var titles = [
-"🔥 " + topic + " | You Won’t Believe This",
-topic + " | Viral Video Idea",
-topic + " | Amazing Facts",
-topic + " | Must Watch Video"
-];
+let response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=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",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+contents:[{parts:[{text:"Give YouTube title and description about "+topic}]}]
+})
+});
 
-var randomTitle = titles[Math.floor(Math.random()*titles.length)];
+let data = await response.json();
 
-var desc = "In this video we explore " + topic + ". Watch till the end for amazing insights.";
-
-var tags = topic + ", viral video, trending video, youtube growth";
-
-var idea = "Create a video showing interesting facts about " + topic;
-
-var script = "Today we are talking about " + topic + ". This topic is very interesting and many people want to know about it.";
-
-document.getElementById("title").innerText = randomTitle;
-document.getElementById("desc").innerText = desc;
-document.getElementById("tags").innerText = tags;
-document.getElementById("idea").innerText = idea;
-document.getElementById("script").innerText = script;
+document.getElementById("title").innerText =
+data.candidates[0].content.parts[0].text;
 
 }
+
 
