@@ -25,7 +25,7 @@ var title = titles[Math.floor(Math.random()*titles.length)];
 
 /* Descriptions */
 var desc = "In this video we explore " + topic +
-". This topic is trending on the internet and many people want to know about it. Watch till the end for amazing information.";
+". This topic is trending on the internet and many people want to know about it. Watch till the end for amazing information.and its world best topic video.";
 
 /* Tags */
 var tags = topic + ", " +
@@ -56,6 +56,7 @@ document.getElementById("thumbnail").innerText = thumbnail;
 document.getElementById("script").innerText = script;
 
 }
+
 
 
 
