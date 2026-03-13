@@ -4,14 +4,57 @@
 
 <head>
 <title>AI Creator Tools</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:linear-gradient(to right,#ff7e5f,#feb47b);
+color:white;
+padding:40px;
+}
+
+input{
+padding:12px;
+width:260px;
+border-radius:5px;
+border:none;
+}
+
+button{
+padding:12px 20px;
+background:black;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+margin-left:10px;
+}
+
+h2{
+margin-top:30px;
+}
+
+p{
+background:white;
+color:black;
+padding:10px;
+border-radius:5px;
+width:80%;
+margin:auto;
+margin-top:10px;
+}
+
+</style>
+
 </head>
 
 <body>
 
 <h1>🚀 AI Creator Tools</h1>
 
-<input id="topic" placeholder="Enter topic">
+<input id="topic" placeholder="Enter video topic">
 
 <button onclick="generate()">Generate</button>
 
@@ -27,12 +70,18 @@
 <h2>🎬 Video Idea</h2>
 <p id="idea"></p>
 
+<h2>⚡ Hook</h2>
+<p id="hook"></p>
+
+<h2>🖼 Thumbnail Text</h2>
+<p id="thumbnail"></p>
+
 <h2>📜 Script</h2>
 <p id="script"></p>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
+
 
