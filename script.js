@@ -6,7 +6,7 @@ let response = await fetch("https://api.openai.com/v1/chat/completions",{
 method:"POST",
 headers:{
 "Content-Type":"application/json",
-"Authorization":"Bearer YOUR_API_KEY"
+"Authorization":"Bearer 
 },
 body:JSON.stringify({
 model:"gpt-4.1-mini",
@@ -21,3 +21,4 @@ let data = await response.json();
 document.getElementById("title").innerText = data.choices[0].message.content;
 
 }
+
