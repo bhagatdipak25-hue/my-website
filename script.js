@@ -1,22 +1,15 @@
-async function generateVideo(){
+function generate(){
 
-let prompt = document.getElementById("prompt").value
+let topic = document.getElementById("prompt").value;
 
-let response = await fetch("https://api.replicate.com/v1/predictions",{
+let title = topic + " | Amazing AI Video";
 
-method:"POST",
+let desc = "Watch this amazing video about " + topic;
 
-headers:{
-"Authorization":"r8_Cay63oEFAFdChu9yDWNc6rpnJDAoKjT2rICZI",
-"Content-Type":"application/json"
-},
+let tags = topic + ", youtube video, trending";
 
-body:JSON.stringify({
-
-version:"video-model",
-
-input:{
-prompt:prompt
-}
+document.getElementById("title").innerText = title;
+document.getElementById("desc").innerText = desc;
+document.getElementById("tags").innerText = tags;
 
 }
