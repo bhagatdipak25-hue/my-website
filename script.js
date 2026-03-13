@@ -2,7 +2,7 @@ function generate(){
 
 var topic = document.getElementById("topic").value;
 
-if(topic == ""){
+if(topic==""){
 alert("Please enter topic");
 return;
 }
@@ -24,5 +24,6 @@ document.getElementById("title").innerText = randomTitle;
 document.getElementById("desc").innerText = desc;
 document.getElementById("tags").innerText = tags;
 
+}
 
 
